@@ -13,12 +13,13 @@ public class Main {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			int n = Integer.parseInt(br.readLine());
 			Problem[] problems = new Problem[n];
+			
 			String line;
 			String[] lineComponents;
+			
 			int m, s;
 			CoinType[] coinTypes;
 			
-			// Read each problem
 			for (int i = 0; i < n; i++) {
 				
 				// Fetch m and S
@@ -50,13 +51,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Problem[] problems = readInput();
-		
-		// Solve the problems
 		int[] results = new int[problems.length];
 		for (int i = 0; i < problems.length; i++) {
 			results[i] = problems[i].solve();
 		}
-		// Print results
 		PrintWriter writer = new PrintWriter(new BufferedOutputStream(System.out));
 		for (int i = 0; i < results.length; i++) {
 			if (results[i] != Integer.MAX_VALUE) {
